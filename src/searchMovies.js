@@ -9,10 +9,16 @@ export default function SearchMovies(){
         const query = "Jurassic Park";
         
         const url = `https://api.themoviedb.org/3/search/movie?api_key=a662712626815555702f1c6320550397&language=en-US&query=${query}&page=1&include_adult=false`;
+
+        try { 
+            const res = await fetch(url);
+            const data = await res.json();
+            console.log(data);
+        }catch(err){
+            console.error(err)
+        }
         
-        const res = await fetch(url);
-        const data = await res.json();
-        console.log(data);
+       
     }
     
     return (
