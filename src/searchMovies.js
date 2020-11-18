@@ -1,7 +1,8 @@
 // useState is a react hook. Manage state in a functional component w/o overhead of class component
 import React, {useState} from "react";
+import MovieCard from './movieCard'
 
-export default function SearchMovies(){
+export default function SearchMovies(props){
 
     // Initial value is empty string, then assign state (index 0 of the return array) to query
     const [query, setQuery] = useState('');
@@ -38,23 +39,8 @@ export default function SearchMovies(){
             <div className="card-list">
                 {/* filter by movies that only have a poster, and then loop over those */}
                 {movies.filter(movie => movie.poster_path).map(movie => 
-                    <div className="card" key={movie.id}>
-                        <img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} alt="{movie.title + `poster`}" className="card--image"/>
-                        <div className="card--content">
-                            <h3 className="card--title">
-                                {movie.title}
-                            </h3>
-                            <p>
-                                <small>RELEASE DATE: {movie.release_date}</small>
-                            </p>
-                            <p>
-                                <small>RATING: {movie.vote_average}</small>
-                            </p>
-                            <p className="card--desc">
-                                {movie.overview}
-                            </p>
-                        </div>
-                    </div>
+                    // pass in movie prop into MovieCard component
+                    <MovieCard movie={movie} key={movie.id} />
                     )}
             </div>
         </>
