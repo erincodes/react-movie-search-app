@@ -34,7 +34,7 @@ export default function SearchMovies(props){
                     placeholder="i.e. Jurassic Park"
                     value={query} onChange={(e) => setQuery(e.target.value)}
                     />
-                <button className="button" type="submit">Search</button>
+                <button className="button" type="submit" disabled={!query}>Search</button>
             </form>
             <div className="card-list">
                 {/* filter by movies that only have a poster, and then loop over those */}
