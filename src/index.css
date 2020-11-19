@@ -30,7 +30,7 @@ small {
 .title {
   font-size: 4.4rem;
   text-align: center;
-  background: -webkit-linear-gradient(#eee, #333);
+  background: -webkit-linear-gradient(#bfbfff, #0000ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
